@@ -63,7 +63,7 @@ Route::group(['prefix'=>'pang'],function (){
 
 //
 
-Route::group(['namespace'=>'Api\V1','prefix'=>'api/v1'],function (){
+Route::group(['namespace'=>'Api\V1','prefix'=>'api/v1','middleware'=>'checkage'],function (){
     Route::get('user/info/{id}',['uses'=>'UserController@info'])->where(['id'=>'[0-9]+']);
 });
 
